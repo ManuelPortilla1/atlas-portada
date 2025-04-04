@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas - Personal Finance</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>Atlas</h2>
+            </div>
+            
+            <div class="sidebar-section">
+                <a href="#" class="nav-item active">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Finances</h3>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-box"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-users"></i>
+                    <span>Budgets</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-receipt"></i>
+                    <span>Income</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-globe"></i>
+                    <span>Expenses</span>
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Accounts</h3>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Banking</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-calendar-day"></i>
+                    <span>Investments</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Reports</span>
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Planning</h3>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Forecasting</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Scenario Planning</span>
+                </a>
+            </div>
+
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <img src="https://via.placeholder.com/40" alt="User">
+                </div>
+                <div class="user-info">
+                    <h4>Manuel</h4>
+                    <p>Developer</p>
+                </div>
+                <i class="fas fa-cog"></i>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="topbar">
+                <div class="search-container">
+                    <i class="fas fa-bars menu-toggle"></i>
+                    <div class="search-box">
+                        <input type="text" placeholder="Search...">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="user-actions">
+                    <button class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="user-dropdown">
+                        <span>Manuel</span>
+                        <span class="user-role">Developer</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <div class="dashboard-header">
+                    <h1>Welcome, Manuel</h1>
+                    <button class="action-btn">
+                        <i class="fas fa-download"></i>
+                        Download Reports
+                    </button>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span>Weekly Income</span>
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="stat-value">$ 15,251</div>
+                        <div class="stat-change positive">+14% <span>Since last month</span></div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span>Weekly Expenses</span>
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-value">$ 7,916</div>
+                        <div class="stat-change positive">+21% <span>Since last month</span></div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span>Monthly Income</span>
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <div class="stat-value">$ 30,125</div>
+                        <div class="stat-change positive">+5% <span>Since last month</span></div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span>Monthly Expenses</span>
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="stat-value">$ 15,152</div>
+                        <div class="stat-change positive">+43% <span>Since last month</span></div>
+                    </div>
+                </div>
+
+                <div class="charts-section">
+                    <div class="line-chart-container">
+                        <canvas id="salesChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="dashboard-tables">
+                    <div class="recent-transactions">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Bank</th>
+                                    <th>User</th>
+                                    <th>Created</th>
+                                    <th>Category</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>BBVA</td>
+                                    <td>Ana Paula Flores</td>
+                                    <td>2023-07-23</td>
+                                    <td>Fun</td>
+                                    <td>$ 1,839.71</td>
+                                </tr>
+                                <tr>
+                                    <td>American Express</td>
+                                    <td>Manuel Portilla</td>
+                                    <td>2025-07-23</td>
+                                    <td>Fun</td>
+                                    <td>$ 3,543.34</td>
+                                </tr>
+                                <tr>
+                                    <td>American Express</td>
+                                    <td>Manuel Portilla</td>
+                                    <td>2025-07-25</td>
+                                    <td>Take out</td>
+                                    <td>$ 357.47</td>
+                                </tr>
+                                <tr>
+                                    <td>BBVA</td>
+                                    <td>Ana Paula Flores</td>
+                                    <td>2025-07-25</td>
+                                    <td>Clothes</td>
+                                    <td>$ 2,715.02</td>
+                                </tr>
+                                <tr>
+                                    <td>Rappi</td>
+                                    <td>Ana Paula Flores</td>
+                                    <td>2025-07-26</td>
+                                    <td>Take out</td>
+                                    <td>$ 2,192.21</td>
+                                </tr>
+                                <tr>
+                                    <td>Citibanamex</td>
+                                    <td>Ana Paula Flores</td>
+                                    <td>2025-07-26</td>
+                                    <td>Movies</td>
+                                    <td>$ 189.32</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="table-pagination">
+                            <div class="pagination-info">
+                                Rows per page: 
+                                <select>
+                                    <option>100</option>
+                                    <option>50</option>
+                                    <option>25</option>
+                                </select>
+                                <span>1-50 of 50</span>
+                            </div>
+                            <div class="pagination-controls">
+                                <button><i class="fas fa-chevron-left"></i></button>
+                                <button><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sales-category">
+                        <h3>Expenses By Category</h3>
+                        <div class="donut-chart-container">
+                            <canvas id="categoryChart"></canvas>
+                        </div>
+                        <div class="chart-legend">
+                            <div class="legend-item">
+                                <span class="legend-color shoes"></span>
+                                <span>Fun</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color clothing"></span>
+                                <span>Clothes</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color accessories"></span>
+                                <span>Night out</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color misc"></span>
+                                <span>Take out</span>
+                            </div>
+                        </div>
+                        <p class="chart-description">
+                            Breakdown of expenses made on a monthly basis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
